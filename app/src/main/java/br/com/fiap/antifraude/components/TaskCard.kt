@@ -1,11 +1,9 @@
-package com.example.app.ui
+package br.com.fiap.antifraude.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Folder
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -15,7 +13,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import br.com.fiap.antifraude.components.Task
 import br.com.fiap.antifraude.R
 
 @Composable
@@ -38,7 +35,7 @@ fun TaskCard(task: Task) {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Icon(
-                    imageVector = Icons.Default.Folder,
+                    imageVector = task.imageVector,
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.primary
                 )
@@ -74,7 +71,7 @@ fun TaskCard(task: Task) {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 LinearProgressIndicator(
-                    progress = {task.progress},
+                    progress = { task.progress },
                     modifier = Modifier.weight(1f),
                     color = MaterialTheme.colorScheme.primary
                 )

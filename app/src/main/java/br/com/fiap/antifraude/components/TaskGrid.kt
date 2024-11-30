@@ -1,25 +1,40 @@
 package br.com.fiap.antifraude.components
 
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.app.ui.TaskCard
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun TaskGrid(tasks: List<Task>) {
-    LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
-        modifier = Modifier.fillMaxSize(),
-        contentPadding = PaddingValues(16.dp)
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Top
     ) {
+        Text(
+            text = "Categorias",
+            fontWeight = FontWeight.ExtraBold,
+            fontSize = 30.sp,
+            style = MaterialTheme.typography.titleLarge,
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
 
-        items(tasks) { task ->
-            TaskCard(task = task)
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(2),
+        ) {
+            items(tasks) { task ->
+                TaskCard(task = task)
+            }
         }
     }
 }

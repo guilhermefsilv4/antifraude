@@ -7,9 +7,11 @@ import androidx.navigation.NavController
 import br.com.fiap.antifraude.components.Loading
 import br.com.fiap.antifraude.components.Scanning
 import kotlinx.coroutines.delay
+import kotlin.random.Random
 
 @Composable
 fun ScoreScreen(navController: NavController) {
+    val score = remember { mutableIntStateOf(Random.nextInt(0, 1001)) }
     var isSuccess by remember { mutableStateOf(false) }
     var isLoading by remember { mutableStateOf(false) }
     var isScanning by remember { mutableStateOf(true) }
@@ -33,7 +35,6 @@ fun ScoreScreen(navController: NavController) {
         )
 
         isLoading -> Loading()
-        isSuccess -> SuccessScreen(navController)
-        else -> FailureScreen(navController)
+        else -> FeedBackScoreScreen(score, navController) {}
     }
 }

@@ -34,7 +34,7 @@ fun SuccessScreen(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                SuccessCard(navController) { }
+                SuccessCard(navController)
             }
         }
     )

@@ -51,7 +51,7 @@ fun TaskCard(task: Task) {
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
-                text = "${task.newTasks} New Tasks",
+                text = "${task.newTasks} nova tarefa",
                 style = MaterialTheme.typography.bodyMedium,
                 color = Color.Gray
             )
@@ -72,15 +72,16 @@ fun TaskCard(task: Task) {
             ) {
                 LinearProgressIndicator(
                     progress = { task.progress },
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.weight(.6f),
                     color = MaterialTheme.colorScheme.primary
                 )
 
-                Spacer(modifier = Modifier.width(8.dp))
+                Spacer(modifier = Modifier.width(10.dp))
 
                 Button(
                     onClick = task.onClick,
                     shape = RoundedCornerShape(8.dp),
+                    modifier = Modifier.weight(1f),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = MaterialTheme.colorScheme.primary
                     )

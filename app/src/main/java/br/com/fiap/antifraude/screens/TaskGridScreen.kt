@@ -13,16 +13,16 @@ import br.com.fiap.antifraude.components.TaskGrid
 @Composable
 fun TaskGridScreen(navController: NavController) {
     val taskList = listOf(
-        Task("Digital", Icons.Default.Fingerprint, 1, 0.4f, "View") {
+        Task("Digital", Icons.Default.Fingerprint, 1, 0.4f, "Coletar") {
             navController.navigate("fingerprint")
         },
-        Task("Facial", Icons.Default.Face, 2, 0.7f, "Check") {
+        Task("Facial", Icons.Default.Face, 2, 0.7f, "Coletar") {
             navController.navigate("facial")
         },
-        Task("Documentos", Icons.Default.DocumentScanner, 9, 0.3f, "Review") {
+        Task("Documentos", Icons.Default.DocumentScanner, 9, 0.3f, "Enviar") {
             navController.navigate("documents")
         },
-        Task("Score", Icons.Default.Score, 5, 0.8f, "Fix") {
+        Task("Score", Icons.Default.Score, 5, 0.8f, "Ver") {
             navController.navigate("score")
         }
     )

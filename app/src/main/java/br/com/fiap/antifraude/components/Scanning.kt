@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -43,7 +44,8 @@ fun Scanning(
             contentDescription = contentDescription,
             modifier = Modifier
                 .size(100.dp)
-                .clip(CircleShape)
+                .clip(CircleShape),
+            tint = MaterialTheme.colorScheme.primary
         )
     }
 }

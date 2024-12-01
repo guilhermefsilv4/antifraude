@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun SuccessCard(navController: NavController, onContinue: () -> Unit) {
+fun SuccessCard(navController: NavController) {
     Card(
         modifier = Modifier
             .padding(16.dp)
@@ -59,14 +59,8 @@ fun SuccessCard(navController: NavController, onContinue: () -> Unit) {
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     CustomButton(
-                        text = "Home",
-                        onClick = { navController.navigate("home") },
-                        type = ButtonType.Secondary,
-                        modifier = Modifier.weight(1f)
-                    )
-                    CustomButton(
                         text = "Continuar",
-                        onClick = { onContinue() },
+                        onClick = { navController.navigate("home") },
                         modifier = Modifier.weight(1f)
                     )
                 }

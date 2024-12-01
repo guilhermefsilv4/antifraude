@@ -35,6 +35,6 @@ fun ScoreScreen(navController: NavController) {
         )
 
         isLoading -> Loading()
-        else -> FeedBackScoreScreen(score, navController) {}
+        else -> FeedBackScoreScreen(score, navController)
     }
 }

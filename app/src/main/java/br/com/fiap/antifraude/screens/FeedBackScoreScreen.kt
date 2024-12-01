@@ -28,7 +28,6 @@ import br.com.fiap.antifraude.components.ScoreCard
 fun FeedBackScoreScreen(
     generatedScore: MutableState<Int>,
     navController: NavController,
-    onRetry: () -> Unit,
 ) {
     val score = generatedScore.value
 

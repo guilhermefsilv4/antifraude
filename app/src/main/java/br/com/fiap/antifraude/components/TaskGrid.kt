@@ -18,7 +18,7 @@ fun TaskGrid(tasks: List<Task>) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(14.dp),
         verticalArrangement = Arrangement.Top
     ) {
         Text(

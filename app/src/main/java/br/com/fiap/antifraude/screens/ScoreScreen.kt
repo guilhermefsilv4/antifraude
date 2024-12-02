@@ -12,7 +12,6 @@ import kotlin.random.Random
 @Composable
 fun ScoreScreen(navController: NavController) {
     val score = remember { mutableIntStateOf(Random.nextInt(0, 1001)) }
-    var isSuccess by remember { mutableStateOf(false) }
     var isLoading by remember { mutableStateOf(false) }
     var isScanning by remember { mutableStateOf(true) }
 
@@ -23,7 +22,6 @@ fun ScoreScreen(navController: NavController) {
         isScanning = false
         isLoading = true
         delay(2000)
-        isSuccess = true
         isLoading = false
     }
 

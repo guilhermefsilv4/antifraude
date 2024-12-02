@@ -8,6 +8,7 @@ import androidx.navigation.NavController
 import br.com.fiap.antifraude.components.Loading
 import br.com.fiap.antifraude.components.Scanning
 import kotlinx.coroutines.delay
+import kotlin.random.Random
 
 @Composable
 fun FacialScreen(navController: NavController) {
@@ -22,7 +23,7 @@ fun FacialScreen(navController: NavController) {
         isScanning = false
         isLoading = true
         delay(2000)
-        isSuccess = true
+        isSuccess = Random.nextBoolean()
         isLoading = false
     }
 
@@ -37,7 +38,7 @@ fun FacialScreen(navController: NavController) {
         isSuccess -> SuccessScreen(navController)
         else -> FailureScreen(
             navController,
-            message = "Error ao capturar facial",
+            message = "Erro ao capturar facial",
             icon = Icons.Default.FaceRetouchingOff,
             description = "Facial",
             onRetry = { navController.navigate("facial") }

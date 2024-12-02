@@ -15,10 +15,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import br.com.fiap.antifraude.viewModel.ResultMockViewModel
 
 @Composable
 fun SuccessCard(navController: NavController) {
+    val viewModel: ResultMockViewModel = viewModel()
     Card(
         modifier = Modifier
             .padding(16.dp)
@@ -60,7 +63,10 @@ fun SuccessCard(navController: NavController) {
                 ) {
                     CustomButton(
                         text = "Continuar",
-                        onClick = { navController.navigate("home") },
+                        onClick = {
+                            navController.navigate("home")
+                            viewModel.setSuccess(!viewModel.isSuccess.value)
+                        },
                         modifier = Modifier.weight(1f)
                     )
                 }

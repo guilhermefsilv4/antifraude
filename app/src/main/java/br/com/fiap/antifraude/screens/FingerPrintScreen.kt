@@ -8,6 +8,7 @@ import androidx.navigation.NavController
 import br.com.fiap.antifraude.components.Loading
 import br.com.fiap.antifraude.components.Scanning
 import kotlinx.coroutines.delay
+import kotlin.random.Random
 
 @Composable
 fun FingerPrintScreen(navController: NavController) {
@@ -22,7 +23,7 @@ fun FingerPrintScreen(navController: NavController) {
         isScanning = false
         isLoading = true
         delay(2000)
-        isSuccess = false
+        isSuccess = Random.nextBoolean()
         isLoading = false
     }
 

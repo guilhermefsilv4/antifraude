@@ -1,4 +1,4 @@
-package br.com.fiap.antifraude.components
+package br.com.fiap.antifraude.components.forms
 
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
@@ -15,8 +15,8 @@ import br.com.fiap.antifraude.utils.formatPhone
 fun Phone(
     telefone: String,
     onTelefoneChange: (String) -> Unit,
-    isError: Boolean,
-    modifier: Modifier = Modifier
+    isError: Boolean = false,
+    modifier: Modifier = Modifier,
 ) {
     OutlinedTextField(
         value = telefone,

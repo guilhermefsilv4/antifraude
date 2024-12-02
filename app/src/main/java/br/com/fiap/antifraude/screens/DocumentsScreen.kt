@@ -2,6 +2,7 @@ package br.com.fiap.antifraude.screens
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DocumentScanner
+import androidx.compose.material.icons.filled.Error
 import androidx.compose.runtime.*
 import androidx.navigation.NavController
 import br.com.fiap.antifraude.components.Loading
@@ -13,6 +14,7 @@ fun DocumentsScreen(navController: NavController) {
     var isSuccess by remember { mutableStateOf(false) }
     var isLoading by remember { mutableStateOf(false) }
     var isScanning by remember { mutableStateOf(true) }
+    var onRetry by remember { mutableStateOf(false) }
 
     val message = "Validando seus documentos, por favor, aguarde..."
 
@@ -21,7 +23,7 @@ fun DocumentsScreen(navController: NavController) {
         isScanning = false
         isLoading = true
         delay(2000)
-        isSuccess = true
+        isSuccess = onRetry
         isLoading = false
     }
 
@@ -34,6 +36,14 @@ fun DocumentsScreen(navController: NavController) {
 
         isLoading -> Loading()
         isSuccess -> SuccessScreen(navController)
-        else -> FailureScreen(navController)
+        else -> FailureScreen(
+            navController,
+            message = "Documentos inválidos",
+            icon = Icons.Default.Error,
+            description = "Documentos",
+            onRetry = {
+                navController.navigate("documents")
+            }
+        )
     }
 }

@@ -2,6 +2,7 @@ package br.com.fiap.antifraude.screens
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Face
+import androidx.compose.material.icons.filled.FaceRetouchingOff
 import androidx.compose.runtime.*
 import androidx.navigation.NavController
 import br.com.fiap.antifraude.components.Loading
@@ -34,6 +35,12 @@ fun FacialScreen(navController: NavController) {
 
         isLoading -> Loading()
         isSuccess -> SuccessScreen(navController)
-        else -> FailureScreen(navController)
+        else -> FailureScreen(
+            navController,
+            message = "Error ao capturar facial",
+            icon = Icons.Default.FaceRetouchingOff,
+            description = "Facial",
+            onRetry = { navController.navigate("facial") }
+        )
     }
 }

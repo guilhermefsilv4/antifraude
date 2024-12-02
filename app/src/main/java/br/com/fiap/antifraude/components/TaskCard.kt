@@ -22,7 +22,7 @@ fun TaskCard(task: Task) {
         modifier = Modifier
             .padding(8.dp)
             .fillMaxWidth()
-            .aspectRatio(1f),
+            .aspectRatio(.9f),
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(8.dp)
     ) {

@@ -1,6 +1,7 @@
 package br.com.fiap.antifraude.screens
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Error
 import androidx.compose.material.icons.filled.Fingerprint
 import androidx.compose.runtime.*
 import androidx.navigation.NavController
@@ -34,6 +35,14 @@ fun FingerPrintScreen(navController: NavController) {
 
         isLoading -> Loading()
         isSuccess -> SuccessScreen(navController)
-        else -> FailureScreen(navController)
+        else -> FailureScreen(
+            navController,
+            message = "Digital inválida!",
+            icon = Icons.Default.Error,
+            description = "Fingerprint",
+            onRetry = {
+                navController.navigate("fingerprint")
+            }
+        )
     }
 }

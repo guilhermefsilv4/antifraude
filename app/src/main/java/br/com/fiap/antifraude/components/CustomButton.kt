@@ -30,8 +30,6 @@ fun CustomButton(
         shape = RoundedCornerShape(12.dp),
         modifier = modifier.padding(8.dp),
         contentPadding = PaddingValues(
-            start = 20.dp,
-            end = 20.dp,
             top = 12.dp,
             bottom = 12.dp
         )

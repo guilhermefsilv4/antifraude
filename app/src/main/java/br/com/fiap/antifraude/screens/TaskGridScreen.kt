@@ -5,8 +5,8 @@ import androidx.compose.material.icons.filled.AppRegistration
 import androidx.compose.material.icons.filled.DocumentScanner
 import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Fingerprint
-import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Score
+import androidx.compose.material.icons.filled.SimCard
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import br.com.fiap.antifraude.components.Task
@@ -27,7 +27,7 @@ fun TaskGridScreen(navController: NavController) {
         Task("Score", Icons.Default.Score, 5, 0.8f, "Ver") {
             navController.navigate("score")
         },
-        Task("SIM SWAP", Icons.Default.Phone, 5, 0.8f, "Ver") {
+        Task("SIM SWAP", Icons.Default.SimCard, 5, 0.8f, "Ver") {
             navController.navigate("sim")
         },
         Task("Cadastro", Icons.Default.AppRegistration, 5, 0.8f, "Ver") {

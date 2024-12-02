@@ -2,8 +2,6 @@ package br.com.fiap.antifraude.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -11,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -18,7 +17,13 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun ErrorCard(navController: NavController, onRetry: () -> Unit) {
+fun ErrorCard(
+    navController: NavController,
+    message: String,
+    icon: ImageVector,
+    description: String,
+    onRetry: () -> Unit,
+) {
     Card(
         modifier = Modifier
             .padding(16.dp)
@@ -38,14 +43,14 @@ fun ErrorCard(navController: NavController, onRetry: () -> Unit) {
                 modifier = Modifier.fillMaxSize()
             ) {
                 Icon(
-                    imageVector = Icons.Filled.Cancel,
-                    contentDescription = "Cancelar",
+                    imageVector = icon,
+                    contentDescription = description,
                     tint = MaterialTheme.colorScheme.error,
                     modifier = Modifier.size(120.dp)
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = "Digital inválida!",
+                    text = message,
                     style = MaterialTheme.typography.bodyLarge.copy(
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Bold,

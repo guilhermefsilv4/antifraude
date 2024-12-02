@@ -8,6 +8,7 @@ import br.com.fiap.antifraude.screens.DocumentsScreen
 import br.com.fiap.antifraude.screens.FacialScreen
 import br.com.fiap.antifraude.screens.FingerPrintScreen
 import br.com.fiap.antifraude.screens.HomeScreen
+import br.com.fiap.antifraude.screens.RegisterScreen
 import br.com.fiap.antifraude.screens.ScoreScreen
 import br.com.fiap.antifraude.screens.TaskGridScreen
 
@@ -36,6 +37,9 @@ fun AppNavigation() {
         }
         composable("score") {
             ScoreScreen(navController)
+        }
+        composable("documents_register") {
+            RegisterScreen(navController)
         }
     }
 }
